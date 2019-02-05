@@ -25,7 +25,7 @@ export default class GuestBook extends Component{
 
         return(
             <div>
-                <div> This is the guest book component</div>
+                <div> This is the guest book component test for github</div>
                 {this.state.customers.map(customer => <CustomerCard info={customer}/>)}
                 
             </div>
