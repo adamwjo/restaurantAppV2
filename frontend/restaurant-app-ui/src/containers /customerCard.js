@@ -14,7 +14,7 @@ const CustomerCard = (props) => (
             {`${props.info.reservations.length} reservation(s)`}
         </Card.Content>
         <Card.Content>
-            <Button onClick={() => {props.clickHandler()}} color='teal' animated='fade'>
+            <Button onClick={() => {props.showProfile(props.info.id)}} color='teal' animated='fade'>
                 <Button.Content visible>Info</Button.Content>
                 <Button.Content hidden>View Profile</Button.Content>
             </Button>

@@ -10,7 +10,8 @@ export default class GuestBook extends Component{
 
     state = {
         customers: [],
-        showPage: null
+        showPage: null,
+        guestId: null
     }
 
     
@@ -23,9 +24,10 @@ export default class GuestBook extends Component{
     
     handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
-    showProfile = () => {
+    showProfile = (id) => {
         this.setState({
-            showPage: true
+            showPage: true,
+            guestId: id
         })
     }
 
@@ -35,6 +37,11 @@ export default class GuestBook extends Component{
         })
     }
 
+
+
+
+
+    
     render(){
 
         return(
@@ -43,10 +50,10 @@ export default class GuestBook extends Component{
                 {this.state.showPage === null ? this.state.customers.map(customer => 
                     <CustomerCard 
 
-                        clickHandler={this.showProfile} 
+                        showProfile={this.showProfile} 
                         info={customer}/>) : 
 
-                    <GuestProfile goBack={this.exitProfile}/>}
+                    <GuestProfile guestId={this.state.guestId} goBack={this.exitProfile}/>}
                 
             </div>
         )
