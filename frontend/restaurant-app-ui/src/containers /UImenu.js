@@ -21,6 +21,20 @@ export default class UiMenu extends Component{
 
         return(
             <div>
+                      <Menu>
+                        <Menu.Item
+                        name='Super Resto-App'
+                        >
+                        Super Resto-App
+                        </Menu.Item>
+
+                        <Menu.Item 
+                        name='reviews'  
+                        onClick={(e) => {console.log(e)}}
+                        >
+                        Add a New Guest
+                        </Menu.Item>
+                    </Menu>
                 <Grid>
                      <Grid.Column width={4}>
                         <Menu fluid vertical tabular>

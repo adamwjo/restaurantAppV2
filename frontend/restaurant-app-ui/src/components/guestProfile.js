@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Axios from 'axios'
-import { Grid, Segment, Header, Icon, List } from 'semantic-ui-react'
+import { Grid, Segment, Header, Icon, List, Button } from 'semantic-ui-react'
 
 
 export default class GuestProfile extends Component {
@@ -50,12 +50,17 @@ export default class GuestProfile extends Component {
 
                 <Grid.Row>
                     <Grid.Column>
-                        <List celled>
+                        <Header as='h2'>
+                            <Header.Content>Guest Reservations</Header.Content>
+                        </Header>
                             {guest.reservations ? guest.reservations.map(reservation => 
+
+                        <List celled>
                                 <List.Item>{reservation.date}, {reservation.time}</List.Item>
+                                <Button color='teal'>Edit</Button>
+                        </List>
 
                             ) : null }
-                        </List>
                     </Grid.Column>
                 </Grid.Row>
 
