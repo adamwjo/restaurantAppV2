@@ -38,6 +38,9 @@ export default class GuestProfile extends Component {
                             </Header>
                             <Header as='h2'>
                                 <Header.Content>{`${guest.first_name}, ${guest.last_name}`}</Header.Content>
+                                <Header.Subheader>phone: {guest.phone_number}</Header.Subheader>
+                                <Header.Subheader>email: {guest.email}</Header.Subheader>
+                                <Header.Subheader>home address: {guest.email}</Header.Subheader>
                             </Header>
                                 <button onClick={() => {this.props.goBack()}}>Go Back</button>
                             
@@ -54,12 +57,10 @@ export default class GuestProfile extends Component {
                             <Header.Content>Guest Reservations</Header.Content>
                         </Header>
                             {guest.reservations ? guest.reservations.map(reservation => 
-
-                        <List celled>
-                                <List.Item>{reservation.date}, {reservation.time}</List.Item>
-                                <Button color='teal'>Edit</Button>
-                        </List>
-
+                                <List celled>
+                                    <List.Item>{reservation.date}, {reservation.time}</List.Item>
+                                    <Button color='teal'>Edit</Button>
+                                </List>
                             ) : null }
                     </Grid.Column>
                 </Grid.Row>

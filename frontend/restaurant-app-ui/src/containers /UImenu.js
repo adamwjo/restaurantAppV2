@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import { Grid, Menu, Segment } from 'semantic-ui-react'
 import GuestBook from '../components/guestBook'
+import NewGuestForm from './newGuestForm'
 
 
 
@@ -14,7 +15,9 @@ export default class UiMenu extends Component{
 
     handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
-    
+    triggerModal = () => {
+
+    }
 
     render(){
         const { activeItem } = this.state
@@ -28,12 +31,8 @@ export default class UiMenu extends Component{
                         Super Resto-App
                         </Menu.Item>
 
-                        <Menu.Item 
-                        name='reviews'  
-                        onClick={(e) => {console.log(e)}}
-                        >
-                        Add a New Guest
-                        </Menu.Item>
+                        <NewGuestForm/>
+                       
                     </Menu>
                 <Grid>
                      <Grid.Column width={4}>
